@@ -1,3 +1,4 @@
+package Actividad1;
 /***
 LEER FICHERO:
 - Utiliza el método list() para recuperar una lista de los archivos del directorio actual.
@@ -5,7 +6,7 @@ LEER FICHERO:
  ***/
 import java.io.File;
 
-public class UD1_Practica1 {
+public class Practica1_1 {
     public static void main(String[] args) {
         String dir = ".";
         File f = new File(dir);

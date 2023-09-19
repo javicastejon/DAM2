@@ -1,3 +1,4 @@
+package Actividad1;
 /*** 
 LISTAR PROPIEDADES
 - Realiza un programa Java que utilice el método listFiles() de la clase File para mostrar la lista de ficheros en un directorio cualquiera.
@@ -6,7 +7,7 @@ LISTAR PROPIEDADES
  ***/
 import java.io.File;
 
-class UD1_Practica2{
+class Practica1_2{
     public static void main(String[] args){
         File f = new File(".");
         String[] listDir = f.list();
