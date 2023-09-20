@@ -1,4 +1,4 @@
-package Actividad1;
+package ficheros.act01;
 /*** 
 MANEJO DE DIRECTORIOS
 - Crea un nuevo directorio, dentro crea dos ficheros.  
@@ -7,7 +7,7 @@ MANEJO DE DIRECTORIOS
 import java.io.File;
 import java.io.IOException;
 
-public class Practica1_3 {
+public class CrearDirectorio {
     public static void main(String[] args) {
         File d = new File("NUEVODIRECTORIO");
         File f1 = new File(d,"FICHERO1.TXT");
