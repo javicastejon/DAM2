@@ -4,4 +4,4 @@
 ## Práctica 3 - LeerEscribirFichTxtBuf
 ## Práctica 4 - EscribirFicheroBytes
 ## Práctica 5 - EscribirFicheroData
-## Práctica 6 - 
+## Práctica 6 - LeerEscribirFichObjeto
