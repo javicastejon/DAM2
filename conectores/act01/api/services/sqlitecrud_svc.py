@@ -1,10 +1,11 @@
-# api/services/sqlitecrud_svc.py
+"""api/services/sqlitecrud_svc.py"""
 import os
 from sqlite3 import DatabaseError, connect
 from injector import inject
 
 
 DATABASE_NAME = os.environ['DB_NAME']
+
 
 class SqliteCrudService:
     """Servicio CRUD para cliente sqlite"""
@@ -14,7 +15,7 @@ class SqliteCrudService:
         self.connection = connect(DATABASE_NAME)
         self.cursor = self.connection.cursor()
         print("SQLite CRUD service init")
-        
+
     def create(self, sql_query, params) -> str:
         """Crea un nuevo registro con los parámetros y devuelve el resultado. """
         # Ejemplo de query: ''' INSERT INTO tabla(campo1,campo2,campo3) VALUES(?,?,?) '''
@@ -23,7 +24,6 @@ class SqliteCrudService:
         self.dispose()
         return 'Succesfull'
 
-        
     def read(self, sql_query, params):
         """Devuelve en una lista el resultado de la query"""
         # Cada fila es como una tupla con un entero como indice
@@ -37,12 +37,11 @@ class SqliteCrudService:
                 return []
         except DatabaseError as ex:
             print("SQLite read query exception: %", str(ex))
-            
-        
+
     def update(self, sql_query):
         """Actualiza un elemento"""
         # read data
-        #sql_query = "SELECT * FROM `empleado` "
+        # sql_query = "SELECT * FROM `empleado` "
 
         # check if there is a change in the database
         rows = self.cursor.execute(sql_query).fetchall()
@@ -51,17 +50,16 @@ class SqliteCrudService:
         # if rows will do, since an empty row is `False`
         if len(rows) > 0:
             for row in rows:
-                id = row[0]
+                _id = row[0]
                 name = row[1]
 
                 print(
-                    f"ID: {id} - {name} ")
+                    f"ID: {_id} - {name} ")
         else:
             print("profile writing to database unsuccessful")
 
         # there is no need to commit here because no changes are made to the database
 
-        
     def delete(self):
         """Elimina un elemento"""
         pass

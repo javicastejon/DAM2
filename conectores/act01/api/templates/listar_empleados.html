@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>Indicar los campos de busqueda:</h1>
+    <h1>Buscar empleado:</h1>
     <form method="post">
         <label for="nombre">Nombre</label>
         <br>
@@ -10,17 +10,18 @@
             value="{{ request.form['nombre'] }}"></input>
         <br>
 
-        <button type="submit">Buscar</button>
+        <button type="submit">Aceptar</button>
     </form>
 
 
     <h1>{% block title %} Lista de empleados: {% endblock %}</h1>
-        {% for row in data %}
-        <tr class="row">
-            {% for cell in row %}
-            <td>{{cell}}</td>
-            {% endfor %}  
-            <br>
-        </tr>
-        {% endfor %}
-{% endblock %}
+        <table style="border: 1px solid black; width:100%;">
+            {% for row in data %}
+            <tr style="border: 2px solid blue;">
+                {% for cell in row %}
+                <td style="border: 2px solid blue;" align="center">{{cell}}</td>
+                {% endfor %}  
+            </tr>
+            {% endfor %}            
+        </table>
+    {% endblock %}
