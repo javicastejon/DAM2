@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Indicar los campos de busqueda:</h1>
+    <form method="post">
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" name="nombre"
+            placeholder="Introducir nombre"
+            value="{{ request.form['nombre'] }}"></input>
+        <br>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+
+    <h1>{% block title %} Lista de empleados: {% endblock %}</h1>
+        {% for row in data %}
+        <tr class="row">
+            {% for cell in row %}
+            <td>{{cell}}</td>
+        {% endfor %}  
+        </tr>
+        {% endfor %}
+{% endblock %}
