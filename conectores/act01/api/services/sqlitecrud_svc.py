@@ -1,11 +1,11 @@
 # api/services/sqlitecrud_svc.py
+import os
 import sqlite3
 from typing import Any
 from injector import inject
 
 
-DATABASE_NAME = '/workspaces/DAM2/conectores/act01/act01.db'
-# DATABASE_NAME = os.environ['DB_NAME']
+DATABASE_NAME = os.environ['DB_NAME']
 
 class SqliteCrudService:
     """Servicio CRUD para cliente sqlite"""
@@ -25,13 +25,12 @@ class SqliteCrudService:
         return 'Succesfull'
 
         
-    def read(self, sql_query, params) -> list[Any]:
+    def read(self, sql_query, params):
         """Devuelve en una lista el resultado de la query"""
         # Cada fila es como una tupla con un entero como indice
         # Ejemplo de query:  "SELECT * FROM `tabla`
         try:
-            self.cursor.execute(sql_query, params)
-            rows = self.cursor.fetchall()
+            rows = self.cursor.execute(sql_query, params).fetchall()
             if len(rows) > 0:
                 return rows
             else:
