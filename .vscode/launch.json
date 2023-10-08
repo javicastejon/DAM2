@@ -13,8 +13,6 @@
                 "FLASK_APP": "/workspaces/DAM2/conectores/act01/app.py",
                 "FLASK_DEBUG": "1",
                 "DB_NAME": "/workspaces/DAM2/conectores/act01/act01.db",
-                "TEMPLATE_PATH": "/workspaces/DAM2/conectores/act01/api/templates",
-                "STATIC_PATH": "/workspaces/DAM2/conectores/act01/api/static",
             },
             "args": [
                 "run",

@@ -1,7 +1,6 @@
 # api/services/sqlitecrud_svc.py
 import os
-import sqlite3
-from typing import Any
+from sqlite3 import DatabaseError, connect
 from injector import inject
 
 
@@ -12,7 +11,7 @@ class SqliteCrudService:
     @inject
     def __init__(self):
         # create connection
-        self.connection = sqlite3.connect(DATABASE_NAME)
+        self.connection = connect(DATABASE_NAME)
         self.cursor = self.connection.cursor()
         print("SQLite CRUD service init")
         
@@ -36,7 +35,7 @@ class SqliteCrudService:
             else:
                 print("No results")
                 return []
-        except Exception as ex:
+        except DatabaseError as ex:
             print("SQLite read query exception: %", str(ex))
             
         

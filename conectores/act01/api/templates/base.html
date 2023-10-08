@@ -26,17 +26,17 @@
 <body>
     <h2 class="page-header text-primary text-center"><span class="fa fa-calendar"> Actividad 1</span></h2>
     <div class="container-fluid">
-        <div class="col-md-offset-4 col-md-10">
-            <div class="col-md-6">
-                <div class="dropdown">
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="dropdown"> Empleados <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ url_for('empleado.crear_empleado') }}">Crear</a></li>
-                        <li><a href="{{ url_for('empleado.listar_empleados') }}">Listar</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="dropdown">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="dropdown"> Empleados <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('empleado.crear_empleado') }}">Crear</a></li>
+                    <li><a href="{{ url_for('empleado.listar_empleados') }}">Listar</a></li>
+                </ul>
+            </div>            
+          </div>
+          <div class="col-md-1">
             <div class="dropdown">
                 <button type="button" class="btn btn-info btn-lg" data-toggle="dropdown"> Personas <span class="caret"></span></button>
                 <ul class="dropdown-menu">
@@ -44,13 +44,17 @@
                     <li><a href="#">Listar</a></li>
                 </ul>
             </div>
+          </div>
+          <div class="col-md-10"></div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-8">
+                {% block content %} {% endblock %}
             </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
         </div>
-        <div>
-            {% block content %} {% endblock %}
-        </div>
-
     </div>
-
 </body>
 </html>
