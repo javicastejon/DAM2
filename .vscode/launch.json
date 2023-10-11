@@ -21,6 +21,19 @@
             ],
             "jinja": true,
             "justMyCode": true
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AppFX",
+            "request": "launch",
+            "mainClass": "AppFX",
+            "projectName": "act01_c208032b"
         }
     ]
 }

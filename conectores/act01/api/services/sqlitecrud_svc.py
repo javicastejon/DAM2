@@ -14,7 +14,7 @@ class SqliteCrudService:
         # create connection
         self.connection = connect(DATABASE_NAME)
         self.cursor = self.connection.cursor()
-        print("SQLite CRUD service init")
+        print("Conexion SQLite iniciada")
 
     def create(self, sql_query, params) -> str:
         """Crea un nuevo registro con los parámetros y devuelve el resultado. """
@@ -66,6 +66,6 @@ class SqliteCrudService:
 
     # close cursor and connection
     def dispose(self):
-        """Cierra la conexion con la BD"""
+        """Cierre de conexion con la BD"""
         self.cursor.close()
         self.connection.close()
